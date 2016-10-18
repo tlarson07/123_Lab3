@@ -18,3 +18,4 @@ for i in range (len(word_list)):
         break
     else:
         start +=1
+#ANSWER = obscured

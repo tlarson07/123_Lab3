@@ -2,6 +2,7 @@ import hashlib
 import random
 word_list = []
 start = 0
+count = 0
 user_3 = "6108d30de651a14600a460621ea509c907c434da"
 
 #puts the word list in an actual list
@@ -14,8 +15,11 @@ for i in range (len(word_list)):
     level_3_pass = word_list[start]
     user_3_guess_hash = hashlib.sha1(level_3_pass).hexdigest()
     if user_3_guess_hash == user_3:
-        print level_3_pass
+        print "Level 3 Password = " + level_3_pass
+        print "Attempts = " + str(count)
         break
     else:
         start +=1
-#ANSWER = obscured
+        count +=1
+#Level 3 Password = obscured
+#Attempts = 65,460

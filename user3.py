@@ -1,9 +1,10 @@
 import hashlib
 import random
-word_list = []
-start = 0
-count = 0
+
 user_3 = "6108d30de651a14600a460621ea509c907c434da"
+count = 0
+start = 0
+word_list = []
 
 #puts the word list in an actual list
 with open('words.txt','r') as f:

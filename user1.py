@@ -1,6 +1,6 @@
 import hashlib
 import random
-#user 1 password hash
+
 user_1 = "1b6453892473a467d07372d45eb05abc2031647a"
 count = 0
 level_1_pass = str(random.randint(0,9))

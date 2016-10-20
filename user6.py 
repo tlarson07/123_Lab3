@@ -1,26 +1,29 @@
 import hashlib
-import random
+import string
 
-user_3 = "6108d30de651a14600a460621ea509c907c434da"
-count = 0
-start = 0
-word_list = []
+user_6 = "963e37b615e688c9fcb696a9b20d5db1dfba2baa"
 
-#puts the word list in an actual list
-with open('words.txt','r') as f:
-    for line in f:
-        for words in line.split():
-            word_list.append(words)
-
-for i in range (len(word_list)):
-    level_3_pass = word_list[start]
-    user_3_guess_hash = hashlib.sha1(level_3_pass).hexdigest()
-    if user_3_guess_hash == user_3:
-        print "Level 3 Password = " + level_3_pass
-        print "Attempts = " + str(count)
-        break
-    else:
-        start +=1
-        count +=1
-#Level 3 Password = obscured
-#Attempts = 65,460
+def password (): #defines password as a function  
+    numberOfGuesses = 0 #Initial number of guesses = 0
+    word_list = []
+    with open('words.txt') as f:
+        for line in f:
+            for words in line.split():
+                word_list.append(words)
+    for a in word_list: #sets a as a word
+        if (len(a) % 10 == 0):
+            print a
+        for b in range(1,9): #generates all the ints between 1 and 9
+            for c in range(10): #generates all the ints between 0 and 10
+                for d in range(10): #generates all the ints between 0 and 10
+                    level_6_pass = a + str(b) + str(c) + str(d) #sets level_5_pass as 3 uppercase letters and 3 ints
+                    user_6_guess_hash = hashlib.sha1(level_6_pass).hexdigest() #hash level_6_pass
+                    numberOfGuesses +=1 #Increase the number of guesses by one
+                    if user_6_guess_hash == user_6: #if user_6_hash and user_6_guess_hash are equal prints level_6_pass and numberOfGuesses
+                        print "Level 6 Password = " + level_6_pass
+                        print "Attempts = " + str(numberOfGuesses)
+                        return
+password ()
+#-----------------------------------------
+#Level 6 Password = concentrates731
+#Attempts = 24,668,632
